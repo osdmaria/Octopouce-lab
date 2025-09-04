@@ -139,6 +139,11 @@ VITE_API_URL=https://your-backend-app.onrender.com
    - SQLite database will be recreated on each Render deployment
    - Consider using a persistent database service for production
 
+5. **SQLite3 Binary Compatibility Error**
+   - Error: `invalid ELF header` when using sqlite3
+   - Solution: The `render.yaml` includes `npm rebuild sqlite3` in build command
+   - This rebuilds SQLite3 binaries for the Linux environment on Render
+
 ### Checking Logs
 
 - **Render**: Go to your service dashboard → "Logs" tab

@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Rajdhani', sans-serif;
+  }
+  
+  body {
+    @apply bg-gradient-cyber text-cyber-cyan-100 min-h-screen;
+    background-attachment: fixed;
+  }
+  
+  /* Scrollbar personnalisée */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-slate-900;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cyber-cyan-600 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-cyber-cyan-500;
+  }
+}
+
+@layer components {
+  /* Boutons avec effet glow */
+  .btn-cyber {
+    @apply px-6 py-3 bg-transparent border-2 border-cyber-cyan-500 text-cyber-cyan-400 font-tech font-semibold rounded-lg transition-all duration-300 hover:bg-cyber-cyan-500 hover:text-dark-slate-900 hover:shadow-lg hover:shadow-cyber-cyan-500/50;
+  }
+  
+  .btn-cyber-primary {
+    @apply px-6 py-3 bg-cyber-cyan-600 text-dark-slate-900 font-tech font-semibold rounded-lg transition-all duration-300 hover:bg-cyber-cyan-500 hover:shadow-lg hover:shadow-cyber-cyan-500/50;
+  }
+  
+  /* Cartes avec effet glassmorphism */
+  .card-cyber {
+    @apply bg-dark-slate-800/50 backdrop-blur-sm border border-cyber-cyan-500/30 rounded-xl p-6 transition-all duration-300 hover:border-cyber-cyan-400/50 hover:shadow-lg hover:shadow-cyber-cyan-500/20;
+  }
+  
+  /* Inputs avec style cyberpunk */
+  .input-cyber {
+    @apply w-full px-4 py-3 bg-dark-slate-800/70 border border-cyber-cyan-500/50 rounded-lg text-cyber-cyan-100 placeholder-cyber-cyan-300/50 focus:outline-none focus:border-cyber-cyan-400 focus:ring-2 focus:ring-cyber-cyan-400/30 transition-all duration-300;
+  }
+  
+  /* Texte avec effet glow */
+  .text-glow {
+    @apply text-cyber-cyan-400;
+    text-shadow: 0 0 10px currentColor;
+  }
+  
+  .text-glow-strong {
+    @apply text-cyber-cyan-300;
+    text-shadow: 0 0 15px currentColor, 0 0 30px currentColor;
+  }
+  
+  /* Navigation */
+  .nav-link {
+    @apply text-cyber-cyan-300 hover:text-cyber-cyan-100 transition-colors duration-300 relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-cyber-cyan-400 transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  /* Sections avec parallax */
+  .section-cyber {
+    @apply relative py-20 overflow-hidden;
+  }
+  
+  .section-cyber::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-glow opacity-30;
+  }
+  
+  /* Animations personnalisées */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+}
+
+@layer utilities {
+  /* Utilitaires pour les effets */
+  .backdrop-cyber {
+    backdrop-filter: blur(10px) saturate(180%);
+  }
+  
+  .border-glow {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+  
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn-cyber-secondary {
+    @apply bg-transparent border-2 border-cyber-cyan-400 text-cyber-cyan-300 font-tech font-semibold py-2 px-6 rounded-lg transition-all duration-300 hover:bg-cyber-cyan-400/10 hover:shadow-lg hover:shadow-cyber-cyan-400/20 active:scale-95;
+  }
+
+  .text-glow-soft {
+    text-shadow: 0 0 5px theme('colors.cyber-cyan.400'), 0 0 10px theme('colors.cyber-cyan.400');
+  }
+
+  .box-glow {
+    box-shadow: 0 0 20px theme('colors.cyber-cyan.400/30'), inset 0 0 20px theme('colors.cyber-cyan.400/10');
+  }
+
+  .animate-matrix-rain {
+    animation: matrix-rain 3s linear infinite;
+  }
+
+  .animate-data-stream {
+    animation: data-stream 8s linear infinite;
+  }
+
+  .animate-hologram {
+    animation: hologram 2s ease-in-out infinite;
+  }
+
+  .animate-scan-line {
+    animation: scan-line 4s linear infinite;
+  }
+
+  .animate-cyber-blink {
+    animation: cyber-blink 1.5s infinite;
+  }
+}
+
+/* Keyframes pour les animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes matrix-rain {
+  0% { transform: translateY(-100vh); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes data-stream {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+@keyframes hologram {
+  0%, 100% { opacity: 0.8; transform: translateY(0px); }
+  50% { opacity: 1; transform: translateY(-2px); }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes cyber-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+/* Effets spéciaux pour le thème OctoLab */
+.octo-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 40%, rgba(6, 182, 212, 0.05) 50%, transparent 60%);
+  background-size: 100px 100px, 150px 150px, 200px 200px;
+  animation: data-stream 20s linear infinite;
+}
+
+.tentacle-border {
+  border-image: linear-gradient(45deg, #06b6d4, #22d3ee, #06b6d4) 1;
+}
+
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: data-stream 20s linear infinite;
+}
+
+.hologram-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.hologram-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.8), transparent);
+  animation: scan-line 3s linear infinite;
+  z-index: 1;
+}
+
+.hologram-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(6, 182, 212, 0.03) 2px,
+    rgba(6, 182, 212, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.matrix-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.matrix-bg::before {
+  content: '01001010 01100001 01110110 01100001 01010011 01100011 01110010 01101001 01110000 01110100';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: rgba(6, 182, 212, 0.1);
+  white-space: pre-wrap;
+  word-break: break-all;
+  animation: matrix-rain 10s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  animation: glitch-1 0.5s infinite;
+  color: rgba(255, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.glitch-text::after {
+  animation: glitch-2 0.5s infinite;
+  color: rgba(0, 255, 255, 0.7);
+  z-index: -2;
+}
+
+@keyframes glitch-1 {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% {
+    transform: translate(0);
+  }
+  15%, 49% {
+    transform: translate(-2px, 1px);
+  }
+}
+
+@keyframes glitch-2 {
+  0%, 20%, 21%, 62%, 63%, 99%, 100% {
+    transform: translate(0);
+  }
+  21%, 62% {
+    transform: translate(2px, -1px);
+  }
+}
+
+.cyber-border {
+  position: relative;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.cyber-border::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(45deg, 
+    rgba(6, 182, 212, 0.5) 0%, 
+    transparent 25%, 
+    transparent 75%, 
+    rgba(6, 182, 212, 0.5) 100%
+  );
+  border-radius: inherit;
+  animation: data-stream 3s linear infinite;
+  z-index: -1;
+}

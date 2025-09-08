@@ -37,14 +37,7 @@ Interface disponible sur http://localhost:5173
 - **Login/Dashboard** : Interface secrète après authentification
 - **API Vulnérable** : Challenge de sécurité pour étudiants
 
-## Thème Visuel
 
-Ambiance cyberpunk/aquatique avec palette sombre (bleu profond, cyan, noir) et effets lumineux.
-
-## Identifiants de Test
-
-- Email: `researcher@octolab.org`
-- Mot de passe: `tentacle123`
 
 ---
 *⚠️ Projet éducatif fictif - Toute ressemblance avec des entités réelles serait purement fortuite.*
